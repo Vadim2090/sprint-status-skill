@@ -48,17 +48,29 @@ Assign one status per task:
 - In progress — Partially done, work started but not finished
 - Not started — No evidence of work in memory
 
-### Step 4: Find Unplanned Work ("Other")
+For **In Progress** tasks, also extract next steps from memory (handoff.md "Next Steps" section, handoff-history.md). Add them as sub-items under the task. If no next steps are found in memory, note which tasks are missing next steps and **ask the user** after presenting the full status output. Do NOT block the status output waiting for this — show the status first, then ask.
+
+### Step 4: Identify Blockers
+
+Scan the same memory sources for blockers — things that prevented or slowed planned work. Look for:
+- Access issues (missing credentials, permissions, accounts)
+- Dependencies on other people that weren't resolved
+- Technical failures or tool limitations
+- Anything explicitly flagged as "blocked" or "couldn't" in handoff notes
+
+Only include real blockers that impacted planned tasks, not general wishlist items.
+
+### Step 5: Find Unplanned Work ("Other")
 
 Scan `handoff-history.md` for sessions dated within the current sprint week (Monday through today).
 Identify completed or in-progress work that does NOT map to any BDSM task.
 These go under the "Other" heading.
 
-### Step 5: Auto-detect Sprint Number
+### Step 6: Auto-detect Sprint Number
 
 Extract the sprint number from the page title (e.g., `11` from `09-03-2026 // Sprint 11 Planning`).
 
-### Step 6: Output
+### Step 7: Output
 
 Present the status update in this exact copy-paste-ready format:
 
@@ -67,8 +79,13 @@ Present the status update in this exact copy-paste-ready format:
 
 ### BDSM
 - [ICON] Task description — brief explanation if needed
+    - Next step 1 (for in-progress tasks only)
+    - Next step 2
 - [ICON] Task description
 ...
+
+### Blockers
+- Blocker description — which task it impacts and what's needed to unblock
 
 ### Other
 - [ICON] Unplanned task description — brief explanation
@@ -89,7 +106,7 @@ Example line:
 - Keep explanations short (1 sentence max), only add when status needs context
 - If a task was killed/cancelled, mark as Done and explain
 - For Done tasks, mention the key outcome if non-obvious
-- **Link to Notion artifacts:** If a Notion page was created or updated as part of a task, include a hyperlink in the task description (e.g., `[W10 analysis](https://www.notion.so/...)`)
+- **Link to artifacts:** If a Notion page, Google Sheet, or other artifact was created/updated as part of a task, include a hyperlink. If a task is marked In Progress or Done but you have no artifact link in memory, **ask the user** for the link before finalizing output.
 - Group related unplanned work into single line items
 - Write in English
 - After showing the formatted output, say: **"Ready to paste into Notion."**
